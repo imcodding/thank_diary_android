@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "371237656279",
+    "project_id": "thankdiary-b18de",
+    "storage_bucket": "thankdiary-b18de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371237656279:android:9fca34533f1db5b0ff0292",
+        "android_client_info": {
+          "package_name": "com.mia.thankdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371237656279-f9isu10nledqn5fqs380kueqrnplifa0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP2gXk5Dp8PV7aye1RA8VfG7R-1XMPN-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371237656279-f9isu10nledqn5fqs380kueqrnplifa0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
