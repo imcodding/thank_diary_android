@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Text.TitleStyle" parent="android:TextAppearance">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
@@ -10,8 +11,15 @@
 
     <style name="Text.ContentStyle" parent="android:TextAppearance">
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_content</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/app_font</item>
         <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Theme.Pink" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorPrimaryDark">@color/pink</item>
+        <item name="colorAccent">@color/pink</item>
     </style>
 </resources>

@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">thankDiary</string>
+    <string name="hello_blank_fragment">hello_blank_fragment</string>
 
     <string name="test_text">테스트 문구입니다.</string>
+    <string name="write_title">오늘의 감사한 일을 떠올려보세요.</string>
+    <string name="write_sub_title">사소한 것이라도 좋습니다.</string>
+
+    <string name="write_content_first">첫 번째 감사함을 메모해보세요.</string>
+    <string name="write_content_second">두 번째 감사함을 메모해보세요.</string>
+    <string name="write_content_third">세 번째 감사함을 메모해보세요.</string>
+
+    <string name="write_save">저장</string>
 </resources>
