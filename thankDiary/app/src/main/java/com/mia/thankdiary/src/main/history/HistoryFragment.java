@@ -17,8 +17,19 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
 
         binding = FragmentHistoryBinding.inflate(inflater);
 
+        initVariable();
+        initView();
         initListener();
+
         return binding.getRoot();
+    }
+
+    private void initVariable() {
+
+    }
+
+    private void initView() {
+
     }
 
     private void initListener() {
