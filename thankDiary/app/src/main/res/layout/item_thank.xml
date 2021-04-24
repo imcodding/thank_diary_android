@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+    <TextView
+        android:id="@+id/item_thank_tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_text"
+        android:padding="15dp"
+        style="@style/Text.ContentStyle" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

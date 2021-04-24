@@ -11,6 +11,8 @@ import com.mia.thankdiary.src.common.BaseFragment;
 
 public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
 
+    private HistoryListAdapter mHistoryListAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -25,15 +27,15 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
     }
 
     private void initVariable() {
-
+        mHistoryListAdapter = new HistoryListAdapter(getContext());
     }
 
     private void initView() {
-
+        binding.historyRvThanks.setAdapter(mHistoryListAdapter);
     }
 
     private void initListener() {
-
+        
     }
 
 
