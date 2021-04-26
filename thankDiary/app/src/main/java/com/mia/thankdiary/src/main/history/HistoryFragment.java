@@ -35,7 +35,7 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
     }
 
     private void initListener() {
-        
+
     }
 
 

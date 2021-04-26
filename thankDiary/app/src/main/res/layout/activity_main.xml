@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pink"
+    android:background="@color/brown"
     tools:context=".src.main.MainActivity">
 
     <androidx.viewpager2.widget.ViewPager2
@@ -20,7 +20,7 @@
         android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/pink"
+        android:background="@color/brown"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 
