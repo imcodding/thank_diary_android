@@ -4,8 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mia.thankdiary.src.roomdb.DiaryDatabase;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -37,12 +41,19 @@ public class ApplicationClass extends Application {
 
     public static String USER_ID;
 
+    public static DiaryDatabase roomDB;
+
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         if (sSharedPreferences == null) {
             sSharedPreferences = getApplicationContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
+        }
+
+        if(roomDB == null) {
+            roomDB = DiaryDatabase.getDatabase(getApplicationContext());
         }
     }
 
