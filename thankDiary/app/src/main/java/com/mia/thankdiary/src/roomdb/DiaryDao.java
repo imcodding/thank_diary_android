@@ -12,6 +12,6 @@ public interface DiaryDao {
     public List<Diary> selectAllDiary();
 
     @Insert
-    public void insertDiary(List<Diary> thanks);
+    public void insertDiary(Diary diary);
 
 }

@@ -70,6 +70,7 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_1" />
 
             <EditText
+                android:id="@+id/write_et_first_thank"
                 style="@style/Text.ContentStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -94,6 +95,7 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_2" />
 
             <EditText
+                android:id="@+id/write_et_second_thank"
                 style="@style/Text.ContentStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -118,6 +120,7 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_3" />
 
             <EditText
+                android:id="@+id/write_et_third_thank"
                 style="@style/Text.ContentStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -131,6 +134,7 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_3" />
 
             <TextView
+                android:id="@+id/write_tv_save"
                 style="@style/Text.ContentStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

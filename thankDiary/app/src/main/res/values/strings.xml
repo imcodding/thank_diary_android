@@ -11,4 +11,6 @@
     <string name="write_content_third">세 번째 감사함을 메모해보세요.</string>
 
     <string name="write_save">저장</string>
+
+    <string name="write_content_check">감사함을 모두 메모해주세요.</string>
 </resources>

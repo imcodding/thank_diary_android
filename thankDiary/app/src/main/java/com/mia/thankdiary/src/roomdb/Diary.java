@@ -4,6 +4,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Date;
+
+import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD;
+
 @Entity(tableName = "diary")
 public class Diary {
     @PrimaryKey(autoGenerate = true)
@@ -22,11 +26,11 @@ public class Diary {
     @ColumnInfo(name = "del_date")
     private String delDate;
 
-    public Diary(String firstThank, String secondThank, String thirdThank, String crtDate) {
+    public Diary(String firstThank, String secondThank, String thirdThank) {
         this.firstThank = firstThank;
         this.secondThank = secondThank;
         this.thirdThank = thirdThank;
-        this.crtDate = crtDate;
+        this.crtDate = YYYY_MM_DD.format(new Date());
     }
 
     public int getSeqNo() {
