@@ -52,9 +52,9 @@ public class ApplicationClass extends Application {
             sSharedPreferences = getApplicationContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
         }
 
-        if(roomDB == null) {
-            roomDB = DiaryDatabase.getDatabase(getApplicationContext());
-        }
+//        if(roomDB == null) {
+//            roomDB = DiaryDatabase.getDatabase(getApplicationContext());
+//        }
     }
 
     public static DatabaseReference getDatabaseReference() {
