@@ -15,4 +15,14 @@
     <dimen name="sub_title_width">285dp</dimen>
     <dimen name="sub_title_writer_margin_top">20dp</dimen>
 
+    <!-- signUp activity -->
+    <dimen name="input_box_height">40dp</dimen>
+    <dimen name="input_box_margin_horizontal">60dp</dimen>
+    <dimen name="input_box_margin_top">10dp</dimen>
+    <dimen name="input_box_padding_horizontal">10dp</dimen>
+    <dimen name="input_box_between_text_margin_top">50dp</dimen>
+    <dimen name="item_question_padding_horizontal">10dp</dimen>
+    <dimen name="item_question_padding_vertical">5dp</dimen>
+    <dimen name="text_width">100dp</dimen>
+
 </resources>

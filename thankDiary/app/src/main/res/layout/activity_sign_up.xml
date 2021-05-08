@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brown"
+    tools:context=".src.signup.SignUpActivity">
+
+    <TextView
+        android:id="@+id/sign_up_tv_title"
+        style="@style/Text.TitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up_title"
+        android:textColor="@color/brown_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sign_up_guide_top" />
+
+    <EditText
+        android:id="@+id/sign_up_et_id"
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:layout_marginTop="@dimen/input_box_between_text_margin_top"
+        android:background="@drawable/bg_input_box"
+        android:hint="@string/sign_up_id_hint"
+        android:inputType="text"
+        android:paddingHorizontal="@dimen/input_box_padding_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_tv_title" />
+
+    <EditText
+        android:id="@+id/sign_up_et_password"
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:layout_marginTop="@dimen/input_box_margin_top"
+        android:background="@drawable/bg_input_box"
+        android:hint="@string/sign_up_pw_hint"
+        android:paddingHorizontal="@dimen/input_box_padding_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_id" />
+
+    <Spinner
+        android:id="@+id/sign_up_spinner_question"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:layout_marginTop="@dimen/input_box_margin_top"
+        android:background="@drawable/bg_input_box"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_password" />
+
+    <EditText
+        android:id="@+id/sign_up_et_question_answer"
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:layout_marginTop="@dimen/input_box_margin_top"
+        android:background="@drawable/bg_input_box"
+        android:hint="@string/sign_up_question_hint"
+        android:paddingHorizontal="@dimen/input_box_padding_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_spinner_question" />
+
+    <TextView
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:layout_marginTop="@dimen/input_box_margin_top"
+        android:text="@string/sign_up_question_desc"
+        android:textColor="@color/brown_dark"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_question_answer" />
+
+    <TextView
+        android:id="@+id/sign_up_cancel"
+        style="@style/Text.ContentStyle"
+        android:layout_width="@dimen/text_width"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:layout_marginTop="@dimen/input_box_between_text_margin_top"
+        android:gravity="right|center"
+        android:text="@string/sign_up_cancel"
+        android:textColor="@color/brown_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_question_answer" />
+
+    <TextView
+        android:id="@+id/sign_up_tv_complete"
+        style="@style/Text.ContentStyle"
+        android:layout_width="@dimen/text_width"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginTop="@dimen/input_box_between_text_margin_top"
+        android:gravity="left|center"
+        android:text="@string/sign_up_complete"
+        android:textColor="@color/brown_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sign_up_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_et_question_answer" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sign_up_guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sign_up_guide_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

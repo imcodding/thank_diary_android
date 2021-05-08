@@ -17,9 +17,11 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="Theme.Pink" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Brown" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/brown</item>
         <item name="colorPrimaryDark">@color/brown</item>
         <item name="colorAccent">@color/brown_dark</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>

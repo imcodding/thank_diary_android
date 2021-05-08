@@ -17,4 +17,14 @@
     <string name="splash_title">감사일기</string>
     <string name="splash_sub_title">"감사일기를 통해 나는 비로소 인생에서 소중한 것이 무엇인지, 삶의 초점을 어디에 맞춰야 하는지를 알게 되었다."</string>
     <string name="splash_sub_title_writer">- 오프라 윈프리 -</string>
+
+    <string name="sign_up_title">회원가입</string>
+    <string name="sign_up_id_hint">아이디를 입력해주세요</string>
+    <string name="sign_up_pw_hint">비밀번호를 입력해주세요</string>
+    <string name="sign_up_question_hint">질문에 대한 답을 입력해주세요</string>
+    <string name="sign_up_question_desc">* 비밀번호 찾기에 사용됩니다</string>
+    <string name="sign_up_complete">완료</string>
+    <string name="sign_up_cancel">취소</string>
+    <string name="sign_up_id_check">이미 사용 중인 아이디입니다.</string>
+
 </resources>
