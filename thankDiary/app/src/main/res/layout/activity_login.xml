@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brown"
+    tools:context=".src.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/login_tv_title"
+        style="@style/Text.TitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_title"
+        android:textColor="@color/brown_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/login_guide_top" />
+
+    <ImageView
+        android:id="@+id/login_iv_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_image_margin_top"
+        android:src="@drawable/ic_diary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_tv_title" />
+
+    <EditText
+        android:id="@+id/login_et_id"
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:background="@drawable/bg_input_box"
+        android:hint="@string/sign_up_id_hint"
+        android:inputType="text"
+        android:paddingHorizontal="@dimen/input_box_padding_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/login_guide_middle" />
+
+    <EditText
+        android:id="@+id/login_et_pw"
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_box_height"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        android:background="@drawable/bg_input_box"
+        android:hint="@string/sign_up_pw_hint"
+        android:inputType="textPassword"
+        android:layout_marginTop="@dimen/input_box_margin_top"
+        android:paddingHorizontal="@dimen/input_box_padding_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/login_et_id" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/login_et_pw"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="@string/sign_up_title"
+            android:gravity="center"
+            style="@style/Text.ContentStyle"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/login_find_password"
+            android:gravity="center"
+            style="@style/Text.ContentStyle"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            style="@style/Text.ContentStyle"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/login_guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/login_guide_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

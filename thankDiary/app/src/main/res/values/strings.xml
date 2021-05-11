@@ -27,4 +27,7 @@
     <string name="sign_up_cancel">취소</string>
     <string name="sign_up_id_check">이미 사용 중인 아이디입니다.</string>
 
+    <string name="login_find_password">비밀번호 찾기</string>
+    <string name="login">로그인</string>
+
 </resources>
