@@ -4,9 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import androidx.room.Room;
-import androidx.room.RoomDatabase;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mia.thankdiary.src.roomdb.DiaryDatabase;
@@ -26,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApplicationClass extends Application {
     // SharedPreferences 키 값
-    public static String TAG = "NOGOMIN_APP";
+    public static String TAG = "THANK_DIARY_APP";
     public static SharedPreferences sSharedPreferences = null;
 
     //날짜 형식
