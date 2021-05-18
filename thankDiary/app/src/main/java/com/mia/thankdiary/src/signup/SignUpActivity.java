@@ -12,12 +12,15 @@ import com.mia.thankdiary.databinding.ActivitySignUpBinding;
 import com.mia.thankdiary.src.common.BaseActivity;
 import com.mia.thankdiary.src.common.util.HashUtil;
 import com.mia.thankdiary.src.login.models.LoginResponse;
+import com.mia.thankdiary.src.signup.service.SignUpService;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 
-public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> {
+public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implements SignUpActivityView{
 
-    private int questionNo = 0;
+    private int mQuestionNo;
+    private SignUpService mSignUpService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +28,14 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> {
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initVariable();
         initView();
         initListener();
+    }
+
+    private void initVariable() {
+        mQuestionNo = 0;
+        mSignUpService = new SignUpService(this);
     }
 
     private void initView() {
@@ -43,7 +52,7 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> {
         binding.signUpSpinnerQuestion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                questionNo = position;
+                mQuestionNo = position;
             }
 
             @Override
@@ -65,16 +74,8 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> {
         if(!validate()) return;
 
         String userId = String.valueOf(binding.signUpEtId.getText());
-        String password = String.valueOf(binding.signUpEtPassword.getText());
-        String hash = "";
-        try {
-            hash = HashUtil.sha256(password);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-
-        LoginResponse model = new LoginResponse(userId, hash, questionNo);
-
+        showProgressDialog();
+        mSignUpService.checkDuplicateId(userId);
     }
 
     private boolean validate() {
@@ -90,16 +91,49 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> {
             return false;
         }
 
-        if(!checkDuplicateId()) {
-            showToast(getString(R.string.sign_up_id_check));
+        value = String.valueOf(binding.signUpEtQuestionAnswer.getText());
+        if(value.isEmpty()) {
+            showToast(getString(R.string.sign_up_question_hint));
             return false;
         }
 
         return true;
     }
 
-    private boolean checkDuplicateId() {
+    @Override
+    public void signUpSuccess(int code) {
+        hideProgressDialog();
+        showToast(getString(R.string.sign_up_success));
+        finish();
+    }
 
-        return true;
+    @Override
+    public void signUpFailure(String message) {
+        hideProgressDialog();
+        showToast(getString(R.string.sign_up_failure));
+    }
+
+    @Override
+    public void checkIdSuccess(int code) {
+        String userId = String.valueOf(binding.signUpEtId.getText());
+        String password = String.valueOf(binding.signUpEtPassword.getText());
+        String questionAnswer = String.valueOf(binding.signUpEtQuestionAnswer.getText());
+        String hash = "";
+        try {
+            hash = HashUtil.sha256(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        LoginResponse model = new LoginResponse(userId, hash, mQuestionNo, questionAnswer);
+        HashMap<String, Object> postValues = model.toMap();
+
+        mSignUpService.signUp(userId, postValues);
+    }
+
+    @Override
+    public void checkIdFailure(String message) {
+        hideProgressDialog();
+        showToast(getString(R.string.sign_up_id_check));
     }
 }
