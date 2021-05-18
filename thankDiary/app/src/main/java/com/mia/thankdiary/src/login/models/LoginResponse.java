@@ -9,11 +9,13 @@ public class LoginResponse implements Serializable {
     private String hash;
     private String token;
     private int questionNo;
+    private String questionAnswer;
 
-    public LoginResponse(String userId, String hash, int questionNo) {
+    public LoginResponse(String userId, String hash, int questionNo, String questionAnswer) {
         this.userId = userId;
         this.hash = hash;
         this.questionNo = questionNo;
+        this.questionAnswer = questionAnswer;
     }
 
     public String getUserId() {
@@ -40,6 +42,14 @@ public class LoginResponse implements Serializable {
         this.questionNo = questionNo;
     }
 
+    public String getQuestionAnswer() {
+        return questionAnswer;
+    }
+
+    public void setQuestionAnswer(String questionAnswer) {
+        this.questionAnswer = questionAnswer;
+    }
+
     public String getToken() {
         return token;
     }
@@ -48,11 +58,12 @@ public class LoginResponse implements Serializable {
         this.token = token;
     }
 
-    private HashMap<String, Object> toMap() {
+    public HashMap<String, Object> toMap() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("userId", userId);
         map.put("hash", hash);
         map.put("question", questionNo);
+        map.put("questionAnswer", questionAnswer);
 
         return map;
     }

@@ -36,10 +36,12 @@ public class ApplicationClass extends Application {
     // Retrofit 인스턴스
     public static Retrofit retrofit;
 
+    public static DiaryDatabase roomDB;
     public static String USER_ID;
 
-    public static DiaryDatabase roomDB;
-
+    // 성공 or 실패
+    public static int SUCCESS_CODE = 200;
+    public static int FAILURE_CODE = 400;
 
     @Override
     public void onCreate() {
