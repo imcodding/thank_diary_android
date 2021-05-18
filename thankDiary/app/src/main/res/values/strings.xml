@@ -26,8 +26,14 @@
     <string name="sign_up_complete">완료</string>
     <string name="sign_up_cancel">취소</string>
     <string name="sign_up_id_check">이미 사용 중인 아이디입니다.</string>
+    <string name="sign_up_success">회원가입 되었습니다.</string>
+    <string name="sign_up_failure">다시 회원가입을 시도해주세요.</string>
 
     <string name="login_find_password">비밀번호 찾기</string>
     <string name="login">로그인</string>
+
+    <string name="login_again_msg">로그인을 다시 시도해주세요.</string>
+    <string name="login_password_error">비밀번호가 틀렸습니다.</string>
+    <string name="login_id_error">아이디가 존재하지 않습니다.</string>
 
 </resources>

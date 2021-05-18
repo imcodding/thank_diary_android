@@ -18,7 +18,7 @@ public class SplashService {
         this.splashActivityView = splashActivityView;
     }
 
-    void autoLogin(String userId) {
+    public void autoLogin(String userId) {
         getDatabaseReference().child("users").child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
