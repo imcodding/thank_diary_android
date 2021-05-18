@@ -1,9 +1,10 @@
 package com.mia.thankdiary.src.main.history.models;
 
+import java.util.List;
+
 public class HistoryResponse {
     private int seqNo;
-    private String content;
-    private String userId;
+    private List<String> contents;
     private String crtDate;
     private String updDate;
     private String delDate;
@@ -16,20 +17,12 @@ public class HistoryResponse {
         this.seqNo = seqNo;
     }
 
-    public String getContent() {
-        return content;
+    public List<String> getContents() {
+        return contents;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setContents(List<String> contents) {
+        this.contents = contents;
     }
 
     public String getCrtDate() {
