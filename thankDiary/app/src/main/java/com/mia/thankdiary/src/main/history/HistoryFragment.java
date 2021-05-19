@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mia.thankdiary.R;
 import com.mia.thankdiary.databinding.FragmentHistoryBinding;
 import com.mia.thankdiary.src.common.BaseFragment;
 import com.mia.thankdiary.src.common.models.Diary;
@@ -54,17 +55,21 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> implem
     public void onResume() {
         super.onResume();
         // get history
+        String date = YYYY_MM_DD.format(new Date());
+        mHistoryService.getHistory(date);
 
     }
 
     @Override
     public void getHistorySuccess(int code, Diary diary) {
-
+        showToast(getString(R.string.test_success));
+        mHistoryListAdapter.setContents(diary.getContents());
+        binding.historyRvThanks.setAdapter(mHistoryListAdapter);
     }
 
     @Override
     public void getHistoryFailure(String message) {
-
+        showToast(getString(R.string.test_failure));
     }
 
 

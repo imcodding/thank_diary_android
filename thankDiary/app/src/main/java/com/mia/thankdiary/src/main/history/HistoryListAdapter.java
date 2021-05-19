@@ -10,21 +10,26 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mia.thankdiary.R;
+import com.mia.thankdiary.src.common.models.Diary;
 import com.mia.thankdiary.src.main.history.models.HistoryResponse;
 
 import java.util.ArrayList;
 
 public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.HistoryHolder> {
-    ArrayList<HistoryResponse> list;
+    ArrayList<Diary> list;
+    ArrayList<String> contents;
     Context context;
 
     public HistoryListAdapter(Context context) {
         this.context = context;
     }
 
-    public void setList(ArrayList<HistoryResponse> list) {
+    public void setList(ArrayList<Diary> list) {
         this.list = list;
     }
+
+    public void setContents(ArrayList<String> contents) { this.contents = contents; }
+
 
     @NonNull
     @Override
@@ -37,13 +42,14 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull HistoryListAdapter.HistoryHolder holder, int position) {
-        HistoryResponse item = list.get(position);
-        holder.itemThankTvContent.setText(item.getContent());
+//        HistoryResponse item = list.get(position);
+        String content = contents.get(position);
+        holder.itemThankTvContent.setText(content);
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return contents.size();
     }
 
     public class HistoryHolder extends RecyclerView.ViewHolder {

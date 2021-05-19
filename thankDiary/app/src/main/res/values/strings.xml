@@ -3,6 +3,9 @@
     <string name="hello_blank_fragment">hello_blank_fragment</string>
 
     <string name="test_text">테스트 문구입니다.</string>
+    <string name="test_success">성공</string>
+    <string name="test_failure">실패</string>
+
     <string name="write_title">오늘의 감사한 일을 떠올려보세요.</string>
     <string name="write_sub_title">사소한 것이라도 좋습니다.</string>
     <string name="write_content_first">첫 번째 감사함을 메모해보세요.</string>
