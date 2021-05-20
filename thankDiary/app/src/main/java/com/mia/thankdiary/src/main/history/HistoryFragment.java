@@ -15,6 +15,7 @@ import com.mia.thankdiary.src.main.history.service.HistoryService;
 
 import java.util.Date;
 
+import static com.mia.thankdiary.config.ApplicationClass.SUCCESS_CODE;
 import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD;
 
 public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> implements HistoryFragmentView {
@@ -62,9 +63,12 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> implem
 
     @Override
     public void getHistorySuccess(int code, Diary diary) {
-        showToast(getString(R.string.test_success));
-        mHistoryListAdapter.setContents(diary.getContents());
-        binding.historyRvThanks.setAdapter(mHistoryListAdapter);
+        if(code == SUCCESS_CODE) {
+            if(diary.getContents() != null) {
+                mHistoryListAdapter.setContents(diary.getContents());
+                binding.historyRvThanks.setAdapter(mHistoryListAdapter);
+            }
+        }
     }
 
     @Override

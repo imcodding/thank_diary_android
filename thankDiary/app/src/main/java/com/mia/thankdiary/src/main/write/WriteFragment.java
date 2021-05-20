@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import static com.mia.thankdiary.config.ApplicationClass.SUCCESS_CODE;
 import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD;
 
 public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements WriteFragmentView {
@@ -103,10 +104,14 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
     @Override
     public void getDiarySuccess(int code, Diary diary) {
         hideProgressDialog();
-        ArrayList<String> contents = diary.getContents();
-        binding.writeEtFirstThank.setText(contents.get(0));
-        binding.writeEtSecondThank.setText(contents.get(1));
-        binding.writeEtThirdThank.setText(contents.get(2));
+        if(code == SUCCESS_CODE) {
+            ArrayList<String> contents = diary.getContents();
+            if(contents != null && contents.size() > 0) {
+                binding.writeEtFirstThank.setText(contents.get(0));
+                binding.writeEtSecondThank.setText(contents.get(1));
+                binding.writeEtThirdThank.setText(contents.get(2));
+            }
+        }
     }
 
     @Override
