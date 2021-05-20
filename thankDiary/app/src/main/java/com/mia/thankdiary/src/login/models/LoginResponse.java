@@ -11,6 +11,8 @@ public class LoginResponse implements Serializable {
     private int questionNo;
     private String questionAnswer;
 
+    public LoginResponse() {}
+
     public LoginResponse(String userId, String hash, int questionNo, String questionAnswer) {
         this.userId = userId;
         this.hash = hash;
