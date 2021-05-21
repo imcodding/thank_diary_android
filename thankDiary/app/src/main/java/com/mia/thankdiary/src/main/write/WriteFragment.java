@@ -24,6 +24,7 @@ import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD;
 public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements WriteFragmentView {
 
     private WriteService mWriteService;
+    private String mToday;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,6 +32,7 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
         binding = FragmentWriteBinding.inflate(inflater);
 
         initVariable();
+        initView();
         initListener();
         initData();
 
@@ -38,7 +40,12 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
     }
 
     private void initVariable() {
+        mToday = YYYY_MM_DD.format(new Date());
         mWriteService = new WriteService(this);
+    }
+
+    private void initView() {
+        binding.writeTvDate.setText(mToday);
     }
 
     private void initListener() {
@@ -49,11 +56,14 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
 
     private void initData() {
         showProgressDialog();
-        mWriteService.getDiaryToday(YYYY_MM_DD.format(new Date()));
+        mWriteService.getDiaryToday(mToday);
     }
 
     private void saveDiary() {
-        if(!validate()) showToast(getString(R.string.write_content_check));
+        if(!validate()) {
+            showToast(getString(R.string.write_content_check));
+            return;
+        }
 
         String firstThank = String.valueOf(binding.writeEtFirstThank.getText());
         String secondThank = String.valueOf(binding.writeEtSecondThank.getText());
@@ -117,5 +127,11 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
     @Override
     public void getDiaryFailure(String message) {
 
+    }
+
+    private void resetInputs() {
+        binding.writeEtFirstThank.getText().clear();
+        binding.writeEtSecondThank.getText().clear();
+        binding.writeEtThirdThank.getText().clear();
     }
 }
