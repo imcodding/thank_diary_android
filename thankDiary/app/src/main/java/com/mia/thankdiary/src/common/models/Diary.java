@@ -14,6 +14,7 @@ public class Diary {
     private String crtDateTime;
     private ArrayList<String> contents;
 
+    public Diary() {}
     public Diary(ArrayList<String> contents) {
         this.crtDate = YYYY_MM_DD.format(new Date());
         this.crtDateTime = YYYY_MM_DD_TIME.format(new Date());

@@ -85,6 +85,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@color/white"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/history_view_line"
                 tools:listitem="@layout/item_thank" />
@@ -95,8 +97,8 @@
                 android:layout_height="50dp"
                 android:padding="5dp"
                 android:src="@drawable/ic_arrow_left"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/history_iv_right"
@@ -104,8 +106,8 @@
                 android:layout_height="50dp"
                 android:padding="5dp"
                 android:src="@drawable/ic_arrow_right"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

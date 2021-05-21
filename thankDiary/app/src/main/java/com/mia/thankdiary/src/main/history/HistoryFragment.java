@@ -42,7 +42,7 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> implem
     }
 
     private void initView() {
-        binding.historyRvThanks.setAdapter(mHistoryListAdapter);
+
     }
 
     private void initListener() {
@@ -58,7 +58,6 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> implem
         // get history
         String date = YYYY_MM_DD.format(new Date());
         mHistoryService.getHistory(date);
-
     }
 
     @Override
