@@ -40,37 +40,37 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/history_tv_calendar"
-                style="@style/Text.ContentStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:text="달력"
-                app:layout_constraintBottom_toBottomOf="@+id/history_iv_calendar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/history_iv_calendar" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/history_tv_calendar"-->
+            <!--                style="@style/Text.ContentStyle"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="20dp"-->
+            <!--                android:text="날짜별로 보기"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/history_iv_calendar"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/history_iv_calendar" />-->
 
-            <ImageView
-                android:id="@+id/history_iv_calendar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/ic_calendar"
-                app:layout_constraintEnd_toStartOf="@+id/history_tv_calendar"
-                app:layout_constraintTop_toBottomOf="@+id/history_tv_title" />
+            <!--            <ImageView-->
+            <!--                android:id="@+id/history_iv_calendar"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginEnd="5dp"-->
+            <!--                android:src="@drawable/ic_calendar"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/history_tv_calendar"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/history_tv_title" />-->
 
-            <TextView
-                android:id="@+id/history_tv_date"
-                style="@style/Text.ContentStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="2021.04.01"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/history_iv_calendar" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/history_tv_date"-->
+            <!--                style="@style/Text.ContentStyle"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:text="2021.04.01"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/history_iv_calendar" />-->
 
             <View
                 android:id="@+id/history_view_line"
@@ -78,7 +78,48 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
                 android:background="#eeeeee"
-                app:layout_constraintTop_toBottomOf="@+id/history_tv_date" />
+                app:layout_constraintTop_toBottomOf="@+id/history_tv_title" />
+
+            <LinearLayout
+                android:id="@+id/history_date_kind_linear"
+                android:layout_width="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/history_view_line">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/history_chip_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:foregroundGravity="center_horizontal"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/history_chip_day"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="일별" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/history_chip_month"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="월별" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/history_chip_year"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="연도별" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/history_rv_thanks"
@@ -88,7 +129,7 @@
                 android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/history_view_line"
+                app:layout_constraintTop_toBottomOf="@+id/history_date_kind_linear"
                 tools:listitem="@layout/item_thank" />
 
             <ImageView

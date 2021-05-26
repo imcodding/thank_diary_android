@@ -6,16 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mia.thankdiary.databinding.FragmentHistoryByDateBinding;
+import com.mia.thankdiary.databinding.FragmentHistoryByDayBinding;
 import com.mia.thankdiary.src.common.BaseFragment;
 
-public class HistoryByDateFragment extends BaseFragment<FragmentHistoryByDateBinding> {
+public class HistoryByDayFragment extends BaseFragment<FragmentHistoryByDayBinding> {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentHistoryByDateBinding.inflate(getLayoutInflater());
+        binding = FragmentHistoryByDayBinding.inflate(getLayoutInflater());
 
         return binding.getRoot();
     }

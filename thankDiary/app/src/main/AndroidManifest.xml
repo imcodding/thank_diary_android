@@ -10,7 +10,7 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Brown">
+        android:theme="@style/Theme.Chip">
         <activity android:name=".src.signup.SignUpActivity" />
         <activity android:name=".src.login.LoginActivity" />
         <activity android:name=".src.splash.SplashActivity">
