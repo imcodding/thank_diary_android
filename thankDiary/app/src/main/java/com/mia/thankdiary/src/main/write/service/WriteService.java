@@ -8,6 +8,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.mia.thankdiary.src.common.models.Diary;
+import com.mia.thankdiary.src.common.util.DateFormatUtil;
 import com.mia.thankdiary.src.main.write.interfaces.WriteFragmentView;
 
 import org.jetbrains.annotations.NotNull;
@@ -26,8 +27,10 @@ public class WriteService {
         this.writeFragmentView = writeFragmentView;
     }
 
-    public void writeDiary(HashMap<String, Object> postValues, String crtDate) {
-        getDatabaseReference().child("diary").child(USER_ID).child(crtDate).setValue(postValues)
+    public void writeDiary(HashMap<String, Object> postValues, Diary diary) {
+        getDatabaseReference().child("diary").child(USER_ID)
+                .child(diary.getYear()).child(diary.getMonth()).child(diary.getDay())
+                .setValue(postValues)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -43,7 +46,9 @@ public class WriteService {
     }
 
     public void getDiaryToday(String crtDate) {
-        getDatabaseReference().child("diary").child(USER_ID).child(crtDate).addListenerForSingleValueEvent(new ValueEventListener() {
+        getDatabaseReference().child("diary").child(USER_ID)
+                .child(DateFormatUtil.getYear(crtDate)).child(DateFormatUtil.getMonth(crtDate)).child(DateFormatUtil.getDay(crtDate))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.getValue() == null) {

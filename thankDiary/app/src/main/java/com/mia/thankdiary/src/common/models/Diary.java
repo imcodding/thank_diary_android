@@ -8,6 +8,9 @@ import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD;
 import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD_TIME;
 
 public class Diary {
+    private String year;
+    private String month;
+    private String day;
     private String crtDate;
     private String updDate;
     private String delDate;
@@ -18,7 +21,34 @@ public class Diary {
     public Diary(ArrayList<String> contents) {
         this.crtDate = YYYY_MM_DD.format(new Date());
         this.crtDateTime = YYYY_MM_DD_TIME.format(new Date());
+        this.year = crtDate.split("-")[0];
+        this.month = crtDate.split("-")[1];
+        this.day = crtDate.split("-")[2];
         this.contents = contents;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getCrtDate() {

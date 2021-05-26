@@ -78,7 +78,8 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
         HashMap<String, Object> postValues = diary.toMap();
 
         showProgressDialog();
-        mWriteService.writeDiary(postValues, diary.getCrtDate());
+        mWriteService.writeDiary(postValues, diary);
+
     }
 
     private boolean validate() {
@@ -129,9 +130,4 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
 
     }
 
-    private void resetInputs() {
-        binding.writeEtFirstThank.getText().clear();
-        binding.writeEtSecondThank.getText().clear();
-        binding.writeEtThirdThank.getText().clear();
-    }
 }
