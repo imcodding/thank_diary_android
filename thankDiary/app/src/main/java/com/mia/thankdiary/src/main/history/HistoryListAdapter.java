@@ -44,7 +44,7 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
     public void onBindViewHolder(@NonNull HistoryListAdapter.HistoryHolder holder, int position) {
 //        HistoryResponse item = list.get(position);
         String content = contents.get(position);
-        holder.itemThankTvContent.setText(content);
+        holder.itemThankTvContent.setText(position + ". " + content);
     }
 
     @Override
