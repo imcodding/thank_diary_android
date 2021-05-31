@@ -16,7 +16,7 @@
     <string name="write_save_success">저장되었습니다.</string>
     <string name="write_save_failure">다시 저장해주세요.</string>
 
-    <string name="splash_title">감사일기</string>
+    <string name="app_title">감사일기</string>
     <string name="splash_sub_title">"감사일기를 통해 나는 비로소 인생에서 소중한 것이 무엇인지, 삶의 초점을 어디에 맞춰야 하는지를 알게 되었다."</string>
     <string name="splash_sub_title_writer">- 오프라 윈프리 -</string>
 
@@ -39,5 +39,8 @@
     <string name="login_id_error">아이디가 존재하지 않습니다.</string>
 
     <string name="network_not_working">네트워크가 원활하지 않습니다.</string>
+
+    <string name="history_view_by_day">일별 보기</string>
+    <string name="history_view_all">한 눈에 보기</string>
 
 </resources>

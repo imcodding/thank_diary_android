@@ -10,7 +10,6 @@ import com.mia.thankdiary.src.common.util.DateFormatUtil;
 import com.mia.thankdiary.src.main.history.interfaces.HistoryFragmentView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static com.mia.thankdiary.config.ApplicationClass.FAILURE_CODE;
 import static com.mia.thankdiary.config.ApplicationClass.SUCCESS_CODE;
@@ -24,42 +23,39 @@ public class HistoryService {
         this.historyFragmentView = historyFragmentView;
     }
 
-    public void getHistoryByDay(String date) {
-        getDatabaseReference().child("diary").child(USER_ID)
-                .child(DateFormatUtil.getYear(date)).child(DateFormatUtil.getMonth(date)).child(DateFormatUtil.getDay(date))
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        if(snapshot.getValue() == null) {
-                            historyFragmentView.getHistByMonthSuccess(FAILURE_CODE, null);
-                        } else {
-                            Iterable<DataSnapshot> data = snapshot.getChildren();
-                            ArrayList<Diary> list = new ArrayList<>();
+//    public void getHistoryByDay(String year, String month, String day) {
+//        getDatabaseReference().child("diary").child(USER_ID)
+//                .child(year).child(month).child(day).addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        if(snapshot.getValue() == null) {
+//                            historyFragmentView.getHistByDaySuccess(FAILURE_CODE, null);
+//                        } else {
+//                            Iterable<DataSnapshot> data = snapshot.getChildren();
+//                            ArrayList<Diary> list = new ArrayList<>();
+//
+//                            for(DataSnapshot dataSnapshot : data) {
+//                                Diary diary = snapshot.getValue(Diary.class);
+//                                list.add(diary);
+//                            }
+//                            historyFragmentView.getHistByDaySuccess(SUCCESS_CODE, diary);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//                        historyFragmentView.getHistByDayFailure(error.getMessage());
+//                    }
+//                });
+//    }
 
-                            for(DataSnapshot dataSnapshot : data) {
-                                Diary diary = dataSnapshot.getValue(Diary.class);
-                                list.add(diary);
-                            }
-
-                            historyFragmentView.getHistByMonthSuccess(SUCCESS_CODE, list);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        historyFragmentView.getHistByMonthFailure(error.getMessage());
-                    }
-                });
-    }
-
-    public void getHistoryByMonth(String date) {
-        getDatabaseReference().child("diary").child(USER_ID)
-                .child(DateFormatUtil.getYear(date)).child(DateFormatUtil.getMonth(date))
+    public void getHistoryByDay(String year, String month) {
+        getDatabaseReference().child("diary").child(USER_ID).child(year).child(month)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.getValue() == null) {
-                    historyFragmentView.getHistByMonthSuccess(FAILURE_CODE, null);
+                    historyFragmentView.getHistByDaySuccess(FAILURE_CODE, null);
                 } else {
                     Iterable<DataSnapshot> data = snapshot.getChildren();
                     ArrayList<Diary> list = new ArrayList<>();
@@ -69,24 +65,24 @@ public class HistoryService {
                         list.add(diary);
                     }
 
-                    historyFragmentView.getHistByMonthSuccess(SUCCESS_CODE, list);
+                    historyFragmentView.getHistByDaySuccess(SUCCESS_CODE, list);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                historyFragmentView.getHistByMonthFailure(error.getMessage());
+                historyFragmentView.getHistByDayFailure(error.getMessage());
             }
         });
     }
 
-    public void getHistoryByYear(String date) {
+    public void getHistoryAll(String date) {
         getDatabaseReference().child("diary").child(USER_ID).child(DateFormatUtil.getYear(date))
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.getValue() == null) {
-                            historyFragmentView.getHistByYearSuccess(FAILURE_CODE, null);
+                            historyFragmentView.getHistAllSuccess(FAILURE_CODE, null);
                         } else {
                             Iterable<DataSnapshot> a = snapshot.getChildren();
                             ArrayList<Diary> list = new ArrayList<>();
@@ -99,13 +95,13 @@ public class HistoryService {
                                 }
                             }
 
-                            historyFragmentView.getHistByYearSuccess(SUCCESS_CODE, list);
+                            historyFragmentView.getHistAllSuccess(SUCCESS_CODE, list);
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        historyFragmentView.getHistByYearFailure(error.getMessage());
+                        historyFragmentView.getHistAllFailure(error.getMessage());
                     }
                 });
     }
