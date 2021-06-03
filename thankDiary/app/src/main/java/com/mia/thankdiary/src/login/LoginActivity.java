@@ -14,6 +14,7 @@ import com.mia.thankdiary.src.login.models.LoginResponse;
 import com.mia.thankdiary.src.login.service.LoginService;
 import com.mia.thankdiary.src.main.MainActivity;
 import com.mia.thankdiary.src.signup.SignUpActivity;
+import com.mia.thankdiary.src.user.FindPasswordActivity;
 import com.mia.thankdiary.util.HashUtil;
 
 import java.security.NoSuchAlgorithmException;
@@ -46,6 +47,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> implements
         });
         // 비밀번호 찾기
         binding.loginTvFindPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(this, FindPasswordActivity.class);
+            startActivity(intent);
         });
         // 로그인 버튼 클릭
         binding.loginTvBtn.setOnClickListener(v -> {

@@ -64,7 +64,7 @@ public class LoginResponse implements Serializable {
         HashMap<String, Object> map = new HashMap<>();
         map.put("userId", userId);
         map.put("hash", hash);
-        map.put("question", questionNo);
+        map.put("questionNo", questionNo);
         map.put("questionAnswer", questionAnswer);
 
         return map;

@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chip">
+        <activity android:name=".src.user.FindPasswordActivity"></activity>
         <activity android:name=".src.signup.SignUpActivity" />
         <activity android:name=".src.login.LoginActivity" />
         <activity android:name=".src.splash.SplashActivity">
@@ -21,11 +22,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".src.main.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

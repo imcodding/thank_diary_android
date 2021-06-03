@@ -25,4 +25,7 @@
     <dimen name="item_question_padding_vertical">5dp</dimen>
     <dimen name="text_width">100dp</dimen>
 
+    <!-- findPassword activity -->
+    <dimen name="text_cancel_size">50dp</dimen>
+
 </resources>

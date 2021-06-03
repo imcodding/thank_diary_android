@@ -47,4 +47,10 @@
     <string name="second">"2. "</string>
     <string name="third">"3. "</string>
 
+    <string name="find_pw_title">비밀번호 찾기</string>
+    <string name="find_pw_new_hint">새 비밀번호를 입력해주세요.</string>
+    <string name="find_pw_new_check_hint">새 비밀번호를 재입력해주세요.</string>
+    <string name="find_pw_question_check">질문의 답이 틀렸습니다.</string>
+    <string name="change_pw_success">비밀번호가 변경되었습니다.</string>
+    <string name="change_pw_failure">비밀번호 변경이 실패하였습니다.</string>
 </resources>
