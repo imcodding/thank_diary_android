@@ -43,4 +43,8 @@
     <string name="history_view_by_day">일별 보기</string>
     <string name="history_view_all">한 눈에 보기</string>
 
+    <string name="first">"1. "</string>
+    <string name="second">"2. "</string>
+    <string name="third">"3. "</string>
+
 </resources>
