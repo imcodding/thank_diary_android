@@ -84,6 +84,8 @@ public class FindPasswordActivity extends BaseActivity<ActivityFindPasswordBindi
                 return false;
             }
         });
+
+        binding.findPwTvCancel.setOnClickListener(v->{ finish(); });
     }
 
     private void checkId() {
