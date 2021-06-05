@@ -14,5 +14,6 @@
 
     <color name="brown">#CFBAA0</color>
     <color name="brown_dark">#653E0D</color>
+    <color name="brown_light">#F8EEE1</color>
     <color name="yellow">#FFC400</color>
 </resources>

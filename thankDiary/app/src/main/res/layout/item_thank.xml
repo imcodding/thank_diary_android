@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/item_thank_tv_content"
+        android:id="@+id/item_thank_tv_date"
+        style="@style/Text.ContentStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/test_text"
-        android:padding="15dp"
-        style="@style/Text.ContentStyle" />
+        android:background="@drawable/bg_click"
+        android:height="60dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:paddingHorizontal="20dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
 
 </LinearLayout>

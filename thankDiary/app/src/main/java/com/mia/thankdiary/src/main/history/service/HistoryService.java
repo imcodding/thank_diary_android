@@ -77,8 +77,7 @@ public class HistoryService {
     }
 
     public void getHistoryAll(String date) {
-        getDatabaseReference().child("diary").child(USER_ID).child(DateFormatUtil.getYear(date))
-                .addListenerForSingleValueEvent(new ValueEventListener() {
+        getDatabaseReference().child("diary").child(USER_ID).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.getValue() == null) {
@@ -90,8 +89,11 @@ public class HistoryService {
                             for(DataSnapshot month : a) {
                                 Iterable<DataSnapshot> b = month.getChildren();
                                 for(DataSnapshot day : b) {
-                                    Diary diary = day.getValue(Diary.class);
-                                    list.add(diary);
+                                    Iterable<DataSnapshot> c = day.getChildren();
+                                    for(DataSnapshot data : c) {
+                                        Diary diary = data.getValue(Diary.class);
+                                        list.add(diary);
+                                    }
                                 }
                             }
 
