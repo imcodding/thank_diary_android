@@ -26,6 +26,6 @@
     <dimen name="text_width">100dp</dimen>
 
     <!-- findPassword activity -->
-    <dimen name="text_cancel_size">50dp</dimen>
+    <dimen name="text_default_size">50dp</dimen>
 
 </resources>

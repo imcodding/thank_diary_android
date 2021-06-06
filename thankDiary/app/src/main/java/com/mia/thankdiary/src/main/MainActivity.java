@@ -12,6 +12,7 @@ import com.mia.thankdiary.databinding.ActivityMainBinding;
 import com.mia.thankdiary.src.common.BaseActivity;
 import com.mia.thankdiary.src.main.history.HistoryFragment;
 import com.mia.thankdiary.src.main.write.WriteFragment;
+import com.mia.thankdiary.src.user.UserSettingFragment;
 
 public class MainActivity extends FragmentActivity {
 
@@ -31,6 +32,7 @@ public class MainActivity extends FragmentActivity {
         MainPageAdapter mAdapter = new MainPageAdapter(this);
         mAdapter.addFragment(new WriteFragment());
         mAdapter.addFragment(new HistoryFragment());
+        mAdapter.addFragment(new UserSettingFragment());
 
         binding.viewpager.setAdapter(mAdapter);
         binding.viewpager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);

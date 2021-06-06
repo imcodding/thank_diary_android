@@ -53,4 +53,13 @@
     <string name="find_pw_question_check">질문의 답이 틀렸습니다.</string>
     <string name="change_pw_success">비밀번호가 변경되었습니다.</string>
     <string name="change_pw_failure">비밀번호 변경이 실패하였습니다.</string>
+
+    <string name="user_setting">사용자 설정</string>
+    <string name="user_setting_written">내가 쓴 글</string>
+    <string name="user_setting_desc">설명서</string>
+    <string name="user_setting_logout">로그아웃</string>
+    <string name="user_setting_alarm">알림 설정</string>>
+    <string name="user_setting_suggest">건의사항</string>
+    <string name="user_setting_suggest_hint">건의사항이 있다면 입력해주세요.</string>
+
 </resources>
