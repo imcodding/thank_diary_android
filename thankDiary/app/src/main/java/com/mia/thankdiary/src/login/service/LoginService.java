@@ -28,9 +28,14 @@ public class LoginService {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 LoginResponse response = snapshot.getValue(LoginResponse.class);
+                if(response == null) {
+                    loginActivityView.loginFailure(null);
+                    return;
+                }
                 if(hash.equals(response.getHash())) {
                     USER_ID = userId;
                     SharedPreferenceUtil.putString("USER_ID", userId);
+                    SharedPreferenceUtil.putBoolean("AUTO_LOGIN", true);
                     loginActivityView.loginSuccess(SUCCESS_CODE, response);
                 } else {
                     // 로그인 실패 => 비밀번호 틀림

@@ -45,6 +45,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> implemen
     private void requestLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         finish();
     }
 
