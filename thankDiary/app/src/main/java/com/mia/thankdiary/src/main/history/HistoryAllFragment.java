@@ -59,9 +59,14 @@ public class HistoryAllFragment extends BaseFragment<FragmentHistoryAllBinding> 
     @Override
     public void getHistAllSuccess(int code, ArrayList<Diary> list) {
         hideProgressDialog();
-        mHistoryListAdapter.setList(list);
-        binding.historyRvList.setAdapter(mHistoryListAdapter);
-        mHistoryListAdapter.setOnItemClickListener(this);
+        if(list != null) {
+            mHistoryListAdapter.setList(list);
+            binding.historyRvList.setAdapter(mHistoryListAdapter);
+            mHistoryListAdapter.setOnItemClickListener(this);
+            binding.historyTvMessage.setVisibility(View.GONE);
+        } else {
+            binding.historyTvMessage.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

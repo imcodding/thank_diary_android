@@ -24,6 +24,14 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/history_view_line" />
 
+    <TextView
+        android:id="@+id/history_tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="조회된 기록이 없습니다."
+        style="@style/Text.ContentStyle" />
+
     <ScrollView
         android:id="@+id/history_scroll_diary"
         android:layout_width="match_parent"
