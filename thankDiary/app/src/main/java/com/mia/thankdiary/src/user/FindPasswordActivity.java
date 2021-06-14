@@ -175,14 +175,22 @@ public class FindPasswordActivity extends BaseActivity<ActivityFindPasswordBindi
         }
 
         if(isCheckedQuestion) {
-            value = String.valueOf(binding.findPwEtNew.getText());
-            if(value.isEmpty()) {
+            String value1 = String.valueOf(binding.findPwEtNew.getText());
+            if(value1.isEmpty()) {
                 showToast(getString(R.string.find_pw_new_hint));
                 return false;
             }
-            value = String.valueOf(binding.findPwEtNewCheck.getText());
-            if(value.isEmpty()) {
+            if(value1.length() < 8 || value1.length() > 20) {
+                showToast(getString(R.string.sign_up_pw_length));
+                return false;
+            }
+            String value2 = String.valueOf(binding.findPwEtNewCheck.getText());
+            if(value2.isEmpty()) {
                 showToast(getString(R.string.find_pw_new_check_hint));
+                return false;
+            }
+            if(!value1.equals(value2)) {
+                showToast(getString(R.string.login_password_error));
                 return false;
             }
         }
