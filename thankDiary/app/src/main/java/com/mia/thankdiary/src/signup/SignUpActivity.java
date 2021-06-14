@@ -3,9 +3,12 @@ package com.mia.thankdiary.src.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.mia.thankdiary.R;
 import com.mia.thankdiary.databinding.ActivitySignUpBinding;
@@ -16,6 +19,8 @@ import com.mia.thankdiary.src.signup.service.SignUpService;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+
+import static com.mia.thankdiary.config.ApplicationClass.SUCCESS_CODE;
 
 public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implements SignUpActivityView{
 
@@ -61,6 +66,17 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
             }
         });
 
+        binding.signUpEtQuestionAnswer.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_FLAG_NO_ENTER_ACTION) {
+                    signUp();
+                    return true;
+                }
+                return false;
+            }
+        });
+
         binding.signUpTvComplete.setOnClickListener(v->{
             signUp();
         });
@@ -85,9 +101,19 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
             return false;
         }
 
+        if(value.length() < 5 || value.length() > 20) {
+            showToast(getString(R.string.sign_up_id_length));
+            return false;
+        }
+
         value = String.valueOf(binding.signUpEtPassword.getText());
         if(value.isEmpty()) {
             showToast(getString(R.string.sign_up_pw_hint));
+            return false;
+        }
+
+        if(value.length() < 8 || value.length() > 20) {
+            showToast(getString(R.string.sign_up_pw_length));
             return false;
         }
 
@@ -115,25 +141,30 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
 
     @Override
     public void checkIdSuccess(int code) {
-        String userId = String.valueOf(binding.signUpEtId.getText());
-        String password = String.valueOf(binding.signUpEtPassword.getText());
-        String questionAnswer = String.valueOf(binding.signUpEtQuestionAnswer.getText());
-        String hash = "";
-        try {
-            hash = HashUtil.sha256(password);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+        hideProgressDialog();
+        if(code == SUCCESS_CODE) { // 중복 아이디가 없다는 의미
+            String userId = String.valueOf(binding.signUpEtId.getText());
+            String password = String.valueOf(binding.signUpEtPassword.getText());
+            String questionAnswer = String.valueOf(binding.signUpEtQuestionAnswer.getText());
+            String hash = "";
+            try {
+                hash = HashUtil.sha256(password);
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+
+            LoginResponse model = new LoginResponse(userId, hash, mQuestionNo, questionAnswer);
+            HashMap<String, Object> postValues = model.toMap();
+
+            mSignUpService.signUp(userId, postValues);
+        } else {
+            showToast(getString(R.string.sign_up_id_check));
         }
 
-        LoginResponse model = new LoginResponse(userId, hash, mQuestionNo, questionAnswer);
-        HashMap<String, Object> postValues = model.toMap();
-
-        mSignUpService.signUp(userId, postValues);
     }
 
     @Override
     public void checkIdFailure(String message) {
-        hideProgressDialog();
-        showToast(getString(R.string.sign_up_id_check));
+        showToast(getString(R.string.network_not_working));
     }
 }

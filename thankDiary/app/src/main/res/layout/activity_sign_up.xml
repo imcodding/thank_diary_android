@@ -40,13 +40,14 @@
         android:layout_marginTop="@dimen/input_box_margin_top"
         android:background="@drawable/bg_input_box"
         android:hint="@string/sign_up_pw_hint"
+        android:inputType="textPassword"
         android:paddingHorizontal="@dimen/input_box_padding_horizontal"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_et_id" />
 
     <Spinner
         android:id="@+id/sign_up_spinner_question"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/input_box_height"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/input_box_margin_horizontal"
         android:layout_marginTop="@dimen/input_box_margin_top"
         android:background="@drawable/bg_input_box"
@@ -61,6 +62,7 @@
         android:layout_marginTop="@dimen/input_box_margin_top"
         android:background="@drawable/bg_input_box"
         android:hint="@string/sign_up_question_hint"
+        android:inputType="text"
         android:paddingHorizontal="@dimen/input_box_padding_horizontal"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_spinner_question" />
 
