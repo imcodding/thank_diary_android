@@ -61,5 +61,7 @@
     <string name="user_setting_alarm">알림 설정</string>>
     <string name="user_setting_suggest">건의사항</string>
     <string name="user_setting_suggest_hint">건의사항이 있다면 입력해주세요.</string>
-
+    <string name="user_setting_logout_message">로그아웃 하시겠습니까?</string>
+    <string name="user_setting_logout_yes">예</string>
+    <string name="user_setting_logout_no">아니오</string>
 </resources>

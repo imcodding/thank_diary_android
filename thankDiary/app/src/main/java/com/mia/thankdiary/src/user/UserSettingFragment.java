@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import com.mia.thankdiary.R;
 import com.mia.thankdiary.databinding.FragmentUserSettingBinding;
 import com.mia.thankdiary.src.common.BaseFragment;
+import com.mia.thankdiary.src.common.MessageDialog;
 import com.mia.thankdiary.src.login.LoginActivity;
 import com.mia.thankdiary.src.user.adapter.UserSettingListAdapter;
 import com.mia.thankdiary.src.user.interfaces.OnItemSettingClickListener;
@@ -24,6 +25,7 @@ import com.mia.thankdiary.src.user.model.Settings;
 public class UserSettingFragment extends BaseFragment<FragmentUserSettingBinding> implements OnItemSettingClickListener {
 
     private UserSettingListAdapter mUserSettingListAdapter;
+    private MessageDialog mMessageDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +41,7 @@ public class UserSettingFragment extends BaseFragment<FragmentUserSettingBinding
 
     private void initVariable() {
         mUserSettingListAdapter = new UserSettingListAdapter(getContext());
+        mMessageDialog = new MessageDialog(getContext());
     }
 
     private void initView() {
@@ -57,28 +60,9 @@ public class UserSettingFragment extends BaseFragment<FragmentUserSettingBinding
 
                 break;
             case R.drawable.ic_logout:
-                showAlertDialog();
+                mMessageDialog.show();
                 break;
         }
     }
 
-    private void showAlertDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("");
-        builder.setMessage("로그아웃 하시겠습니까?");
-        builder.setPositiveButton("예",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(getActivity(), LoginActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                    }
-                });
-        builder.setNegativeButton("아니오",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-        builder.show();
-    }
 }

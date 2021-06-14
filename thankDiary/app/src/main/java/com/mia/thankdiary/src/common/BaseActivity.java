@@ -2,6 +2,8 @@ package com.mia.thankdiary.src.common;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -9,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
+
+import java.util.regex.Pattern;
 
 public class BaseActivity<B extends ViewBinding> extends AppCompatActivity {
     protected B binding;

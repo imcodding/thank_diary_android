@@ -28,4 +28,8 @@
     <!-- findPassword activity -->
     <dimen name="text_default_size">50dp</dimen>
 
+    <!-- userSetting fragment (dialog message) -->
+    <dimen name="dialog_message_height">60dp</dimen>
+    <dimen name="dialog_message_padding_vertical">20dp</dimen>
+    <dimen name="dialog_message_padding_horizontal">40dp</dimen>
 </resources>

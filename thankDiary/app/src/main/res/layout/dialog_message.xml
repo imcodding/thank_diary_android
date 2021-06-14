@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dialog_message_title"
+        style="@style/Text.ContentStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_message_height"
+        android:paddingHorizontal="@dimen/dialog_message_padding_horizontal"
+        android:text="@string/user_setting_logout_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_message_tv_no"
+        style="@style/Text.ContentStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dialog_message_padding_vertical"
+        android:paddingHorizontal="@dimen/dialog_message_padding_horizontal"
+        android:text="@string/user_setting_logout_no"
+        android:textColor="@color/yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_message_title" />
+
+    <TextView
+        android:id="@+id/dialog_message_tv_yes"
+        style="@style/Text.ContentStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dialog_message_padding_vertical"
+        android:paddingHorizontal="@dimen/dialog_message_padding_horizontal"
+        android:text="@string/user_setting_logout_yes"
+        android:textColor="@color/brown_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_message_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
