@@ -31,6 +31,7 @@
     <string name="sign_up_success">회원가입 되었습니다.</string>
     <string name="sign_up_failure">다시 회원가입을 시도해주세요.</string>
     <string name="sign_up_id_length">아이디는 5글자 이상 20글자 미만으로 입력해주세요.</string>
+    <string name="sign_up_id_pattern">아이디는 5~20자의 영문자 또는 영문자+숫자만 가능합니다.</string>
     <string name="sign_up_pw_length">비밀번호는 8글자 이상 20글자 미만으로 입력해주세요</string>
 
     <string name="login_find_password">비밀번호 찾기</string>

@@ -3,6 +3,7 @@ package com.mia.thankdiary.src.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Parcel;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -19,6 +20,8 @@ import com.mia.thankdiary.src.signup.service.SignUpService;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.mia.thankdiary.config.ApplicationClass.SUCCESS_CODE;
 
@@ -50,6 +53,7 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
                 R.layout.item_question
         );
         binding.signUpSpinnerQuestion.setAdapter(arrayAdapter);
+        binding.signUpEtId.setPrivateImeOptions("defaultInputMode=english;");
     }
 
     private void initListener() {
@@ -101,8 +105,8 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
             return false;
         }
 
-        if(value.length() < 5 || value.length() > 20) {
-            showToast(getString(R.string.sign_up_id_length));
+        if(!checkEngNum(value.toLowerCase())) {
+            showToast(getString(R.string.sign_up_id_pattern));
             return false;
         }
 
@@ -167,4 +171,11 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
     public void checkIdFailure(String message) {
         showToast(getString(R.string.network_not_working));
     }
+
+    // 영문+숫자만 입력 체크
+    public boolean checkEngNum(String str) {
+        String regExp = "^[a-z]+[a-z0-9]{4,19}$";
+        return Pattern.matches(regExp, str);
+    }
+
 }
