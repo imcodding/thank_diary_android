@@ -110,14 +110,19 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
             return false;
         }
 
-        value = String.valueOf(binding.signUpEtPassword.getText());
-        if(value.isEmpty()) {
+        String value2 = String.valueOf(binding.signUpEtPassword.getText());
+        if(value2.isEmpty()) {
             showToast(getString(R.string.sign_up_pw_hint));
             return false;
         }
 
-        if(value.length() < 8 || value.length() > 20) {
+        if(value2.length() < 8 || value2.length() > 20) {
             showToast(getString(R.string.sign_up_pw_length));
+            return false;
+        }
+
+        if(value.equals(value2)) {
+            showToast(getString(R.string.sign_up_pw_match_id));
             return false;
         }
 
