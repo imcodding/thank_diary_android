@@ -22,7 +22,7 @@ public class UserSettingListAdapter extends RecyclerView.Adapter<UserSettingList
     private Context context;
     private int[] images = new int[]{
             R.drawable.ic_pencil, R.drawable.ic_description,
-            R.drawable.ic_alarm, R.drawable.ic_logout
+            R.drawable.ic_alarm, R.drawable.ic_logout, R.drawable.ic_suggest
     };
 
     private OnItemSettingClickListener listener;
@@ -75,9 +75,10 @@ public class UserSettingListAdapter extends RecyclerView.Adapter<UserSettingList
 
     private void initList() {
         list = new ArrayList<>();
-        list.add(new Settings(context.getString(R.string.user_setting_written), images[0]));
+//        list.add(new Settings(context.getString(R.string.user_setting_written), images[0]));
         list.add(new Settings(context.getString(R.string.user_setting_desc), images[1]));
 //        list.add(new Settings(context.getString(R.string.user_setting_alarm), images[2]));
         list.add(new Settings(context.getString(R.string.user_setting_logout), images[3]));
+        list.add(new Settings(context.getString(R.string.user_setting_suggest), images[4]));
     }
 }

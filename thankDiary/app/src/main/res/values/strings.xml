@@ -63,9 +63,16 @@
     <string name="user_setting_desc">설명서</string>
     <string name="user_setting_logout">로그아웃</string>
     <string name="user_setting_alarm">알림 설정</string>>
-    <string name="user_setting_suggest">건의사항</string>
-    <string name="user_setting_suggest_hint">건의사항이 있다면 입력해주세요.</string>
+    <string name="user_setting_suggest">문의 suy0226@gmail.com</string>
+    <string name="user_setting_suggest_hint">문의사항이 있다면 입력해주세요.</string>
     <string name="user_setting_logout_message">로그아웃 하시겠습니까?</string>
     <string name="user_setting_logout_yes">예</string>
     <string name="user_setting_logout_no">아니오</string>
+
+    <string-array name="description">
+        <item>"하루에 3가지 기록만 가능합니다. 하루가 지나기 전까지 수정이 가능하며, \n해당 날짜가 지나면 수정 및 삭제가 불가능합니다."</item>
+        <item>"보기 방식은 2가지 방식을 제공합니다. 실제 일기처럼 하나씩 넘겨가며 보는 방식과\n쓴 날짜별로 한 눈에 보는 방식입니다."</item>
+        <item>"회원가입 시 있던 질문은 반드시 입력한 그대로 기억해야합니다.\n잊어버리실 경우, 비밀번호를 찾는데 어려움이 있을 수 있습니다."</item>
+        <item>"앱을 삭제 후 재설치하여도, 저장된 기록은 사라지지 않습니다."</item>
+    </string-array>
 </resources>
