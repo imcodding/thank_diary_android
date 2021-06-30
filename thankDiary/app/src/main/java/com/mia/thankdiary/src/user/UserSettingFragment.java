@@ -41,9 +41,9 @@ public class UserSettingFragment extends BaseFragment<FragmentUserSettingBinding
         binding.userSettingRvList.setAdapter(mUserSettingListAdapter);
         String[] descList = getResources().getStringArray(R.array.description);
         binding.userSettingInclude.includeDescription1.setText(descList[0]);
-        binding.userSettingInclude.includeDescription2.setText(descList[2]);
-        binding.userSettingInclude.includeDescription3.setText(descList[3]);
-        binding.userSettingInclude.includeDescription4.setText(descList[4]);
+        binding.userSettingInclude.includeDescription2.setText(descList[1]);
+        binding.userSettingInclude.includeDescription3.setText(descList[2]);
+        binding.userSettingInclude.includeDescription4.setText(descList[3]);
     }
 
     private void initListener() {

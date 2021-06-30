@@ -116,8 +116,8 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
             return false;
         }
 
-        if(value2.length() < 8 || value2.length() > 20) {
-            showToast(getString(R.string.sign_up_pw_length));
+        if(!checkEngNum(value2.toLowerCase())) {
+            showToast(getString(R.string.sign_up_pw_pattern));
             return false;
         }
 
@@ -157,7 +157,7 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
             String questionAnswer = String.valueOf(binding.signUpEtQuestionAnswer.getText());
             String hash = "";
             try {
-                hash = HashUtil.sha256(password);
+                hash = HashUtil.sha256(password.toLowerCase());
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
@@ -176,11 +176,4 @@ public class SignUpActivity extends BaseActivity<ActivitySignUpBinding> implemen
     public void checkIdFailure(String message) {
         showToast(getString(R.string.network_not_working));
     }
-
-    // 영문+숫자만 입력 체크
-    public boolean checkEngNum(String str) {
-        String regExp = "^[a-z]+[a-z0-9]{4,19}$";
-        return Pattern.matches(regExp, str);
-    }
-
 }

@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> implements
 
         try {
             showProgressDialog();
-            mLoginService.login(userId, HashUtil.sha256(password));
+            mLoginService.login(userId, HashUtil.sha256(password.toLowerCase()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

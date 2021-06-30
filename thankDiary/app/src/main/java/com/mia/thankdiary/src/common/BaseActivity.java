@@ -46,4 +46,10 @@ public class BaseActivity<B extends ViewBinding> extends AppCompatActivity {
     public void showLog(final String tag, final String message) {
         Log.d("SHOW_LOG_" + tag, message);
     }
+
+    // 영문+숫자만 입력 체크
+    public boolean checkEngNum(String str) {
+        String regExp = "^[a-z]+[a-z0-9]{4,19}$";
+        return Pattern.matches(regExp, str);
+    }
 }

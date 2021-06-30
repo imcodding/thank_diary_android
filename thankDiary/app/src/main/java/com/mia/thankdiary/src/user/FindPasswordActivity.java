@@ -180,8 +180,13 @@ public class FindPasswordActivity extends BaseActivity<ActivityFindPasswordBindi
                 showToast(getString(R.string.find_pw_new_hint));
                 return false;
             }
-            if(value1.length() < 8 || value1.length() > 20) {
-                showToast(getString(R.string.sign_up_pw_length));
+            if(!checkEngNum(value1.toLowerCase())) {
+                showToast(getString(R.string.sign_up_pw_pattern));
+                return false;
+            }
+            String userId = String.valueOf(binding.findPwEtId.getText());
+            if(value.equals(userId)) {
+                showToast(getString(R.string.sign_up_pw_match_id));
                 return false;
             }
             String value2 = String.valueOf(binding.findPwEtNewCheck.getText());

@@ -29,11 +29,12 @@
     <string name="sign_up_cancel">취소</string>
     <string name="sign_up_id_check">이미 사용 중인 아이디입니다.</string>
     <string name="sign_up_success">회원가입 되었습니다.</string>
-    <string name="sign_up_failure">다시 회원가입을 시도해주세요.</string>
-    <string name="sign_up_id_length">아이디는 5글자 이상 20글자 미만으로 입력해주세요.</string>
-    <string name="sign_up_id_pattern">아이디는 5~20자의 영문자 또는 영문자+숫자만 가능합니다.</string>
-    <string name="sign_up_pw_length">비밀번호는 8글자 이상 20글자 미만으로 입력해주세요</string>
-    <string name="sign_up_pw_match_id">아이디와 동일한 비밀번호는 사용할 수 없습니다.</string>
+    <string name="sign_up_failure">다시 회원가입을 시도해주세요</string>
+    <string name="sign_up_id_length">아이디는 5글자 이상 20글자 미만으로 입력해주세요</string>
+    <string name="sign_up_id_pattern">아이디는 5~20자의 영문자 또는 영문자+숫자만 가능합니다</string>
+    <string name="sign_up_pw_length">비밀번호는 5글자 이상 20글자 미만으로 입력해주세요</string>
+    <string name="sign_up_pw_pattern">비밀번호는 5~20글자 영문자 또는 영문자+숫자만 가능합니다</string>
+    <string name="sign_up_pw_match_id">아이디와 동일한 비밀번호는 사용할 수 없습니다</string>
 
     <string name="login_find_password">비밀번호 찾기</string>
     <string name="login">로그인</string>
@@ -70,9 +71,9 @@
     <string name="user_setting_logout_no">아니오</string>
 
     <string-array name="description">
-        <item>"하루에 3가지 기록만 가능합니다. 하루가 지나기 전까지 수정이 가능하며, \n해당 날짜가 지나면 수정 및 삭제가 불가능합니다."</item>
-        <item>"보기 방식은 2가지 방식을 제공합니다. 실제 일기처럼 하나씩 넘겨가며 보는 방식과\n쓴 날짜별로 한 눈에 보는 방식입니다."</item>
-        <item>"회원가입 시 있던 질문은 반드시 입력한 그대로 기억해야합니다.\n잊어버리실 경우, 비밀번호를 찾는데 어려움이 있을 수 있습니다."</item>
+        <item>"하루에 3가지 기록만 가능합니다. 하루가 지나기 전까지 수정이 가능하며, 해당 날짜가 지나면 수정 및 삭제가 불가능합니다."</item>
+        <item>"보기 방식은 2가지 방식을 제공합니다. 실제 일기처럼 하나씩 넘겨가며 보는 방식과 쓴 날짜별로 한 눈에 보는 방식입니다."</item>
+        <item>"회원가입 시 있던 질문은 반드시 입력한 그대로 기억해야합니다. 잊어버리실 경우, 비밀번호를 찾는데 어려움이 있을 수 있습니다."</item>
         <item>"앱을 삭제 후 재설치하여도, 저장된 기록은 사라지지 않습니다."</item>
     </string-array>
 </resources>
