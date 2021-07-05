@@ -11,11 +11,13 @@ import androidx.fragment.app.FragmentManager;
 import com.mia.thankdiary.R;
 import com.mia.thankdiary.databinding.FragmentHistoryBinding;
 import com.mia.thankdiary.src.common.BaseFragment;
+import com.mia.thankdiary.src.main.MainActivity;
 
 import java.util.Objects;
 
 public class HistoryFragment extends BaseFragment<FragmentHistoryBinding>  {
 
+    private MainActivity mParentActivity;
     private FragmentManager mFragmentManager;
     private int mFragIndex = 0;
 
@@ -33,6 +35,7 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding>  {
     }
 
     private void initVariable() {
+        mParentActivity = (MainActivity) getActivity();
         mFragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
     }
 
@@ -62,5 +65,10 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding>  {
     @Override
     public void onResume() {
         super.onResume();
+        if(mParentActivity.isRefreshFrag()) {
+            mParentActivity.setRefreshFrag(false);
+            mFragIndex = 1;
+            mFragmentManager.beginTransaction().replace(R.id.history_container, new HistoryByDayFragment()).commit();
+        }
     }
 }

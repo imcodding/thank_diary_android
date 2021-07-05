@@ -79,6 +79,7 @@
                 android:background="@android:color/transparent"
                 android:gravity="top"
                 android:hint="@string/write_content_first"
+                android:inputType="textMultiLine|textNoSuggestions"
                 android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guideline_content_2"
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_1" />
@@ -104,6 +105,7 @@
                 android:background="@android:color/transparent"
                 android:gravity="top"
                 android:hint="@string/write_content_second"
+                android:inputType="textMultiLine|textNoSuggestions"
                 android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/guideline_content_3"
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_2" />
@@ -129,6 +131,7 @@
                 android:background="@android:color/transparent"
                 android:gravity="top"
                 android:hint="@string/write_content_third"
+                android:inputType="textMultiLine|textNoSuggestions"
                 android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="@id/guideline_content_4"
                 app:layout_constraintTop_toTopOf="@+id/guideline_content_3" />

@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/history_iv_left"
-        app:layout_constraintTop_toBottomOf="@+id/history_tv_date"
+        app:layout_constraintTop_toBottomOf="@+id/history_view_line"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="-143dp">
 

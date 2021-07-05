@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">thankDiary</string>
+    <string name="app_name">감사일기</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
 
     <string name="test_text">테스트 문구입니다.</string>

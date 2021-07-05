@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.mia.thankdiary.R;
 import com.mia.thankdiary.databinding.FragmentWriteBinding;
 import com.mia.thankdiary.src.common.BaseFragment;
+import com.mia.thankdiary.src.main.MainActivity;
 import com.mia.thankdiary.src.main.write.interfaces.WriteFragmentView;
 import com.mia.thankdiary.src.main.write.service.WriteService;
 import com.mia.thankdiary.src.common.models.Diary;
@@ -23,6 +24,7 @@ import static com.mia.thankdiary.config.ApplicationClass.YYYY_MM_DD;
 
 public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements WriteFragmentView {
 
+    private MainActivity mParentActivity;
     private WriteService mWriteService;
     private String mToday;
 
@@ -42,6 +44,7 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
     private void initVariable() {
         mToday = YYYY_MM_DD.format(new Date());
         mWriteService = new WriteService(this);
+        mParentActivity = (MainActivity) getActivity();
     }
 
     private void initView() {
@@ -104,6 +107,8 @@ public class WriteFragment extends BaseFragment<FragmentWriteBinding> implements
     public void writeSuccess(int code) {
         hideProgressDialog();
         showToast(getString(R.string.write_save_success));
+
+        mParentActivity.setRefreshFrag(true);
     }
 
     @Override
